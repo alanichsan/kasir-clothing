@@ -1,0 +1,26 @@
+[
+    {
+        "name": "nevada",
+        "color": "biru",
+        "size": "M",
+        "stock": 240,
+        "code": 6490,
+        "price": 500000
+    },
+    {
+        "name": "zing",
+        "color": "biru",
+        "size": "M",
+        "stock": 90,
+        "code": 1020,
+        "price": 100000
+    },
+    {
+        "name": "mos",
+        "color": "hijau",
+        "size": "M",
+        "stock": 90,
+        "code": 5422,
+        "price": 90000
+    }
+]
