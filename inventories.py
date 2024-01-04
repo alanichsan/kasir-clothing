@@ -1,6 +1,7 @@
 import json
 import random
 import sys
+from show_inventories import show
 
 # Read JSON file
 with open("data.json", "r") as data:
@@ -52,7 +53,7 @@ def create():
     print("===== Create successfully! =====")
     print("-------------------------------------")
     sys.stdout.write("\n")
-    barangMasuk()
+    inventories()
 
 
 def update():
@@ -60,7 +61,7 @@ def update():
         print("Anda belum memmiliki barang masuk untuk saat ini")
         print("-------------------------------------")
         sys.stdout.write("\n")
-        barangMasuk()
+        inventories()
     else:
         while True:
             code = input("code barang: ")
@@ -92,38 +93,11 @@ def update():
                     print("===== Update successfully! =====")
                     print("-------------------------------------")
                     sys.stdout.write("\n")
-                    barangMasuk()
+                    inventories()
         else:
             print("Invalid Code")
             sys.stdout.write("\n")
             update()
-
-
-
-def show():
-    if len(data) == 0:
-        print("Anda belum memmiliki barang masuk untuk saat ini")
-    else:
-        # Determine maximum length of each column
-        name_col_len = max(len((item["name"])) for item in data) + 4
-        color_col_len = max(len(item["color"]) for item in data) + 4
-        size_col_len = max(len(item["size"]) for item in data) + 4
-        stock_col_len = max(len(str(item["stock"])) for item in data) + 4
-        price_col_len = max(len(str(item["price"])) for item in data) + 4
-        code_col_len = max(len(str(item["code"])) for item in data) + 4
-
-        print("List Semua Barang Dalam Gudang")
-        print("-------------------------------------")
-        # Print header
-        print(
-            f'{"NAME".ljust(name_col_len)} {"COLOR".ljust(color_col_len)} {"SIZE".ljust(size_col_len)} {"STOCK".ljust(stock_col_len)} {"PRICE".ljust(price_col_len)} {"CODE".ljust(code_col_len)}'
-        )
-        # Print rows
-        for item in data:
-            print(
-                f"{item['name'].ljust(name_col_len)} {item['color'].ljust(color_col_len)} {item['size'].ljust(size_col_len)} {str(item['stock']).ljust(stock_col_len)} {str(item['price']).ljust(price_col_len)} {str(item['code']).ljust(code_col_len)}"
-            )
-        print("-------------------------------------")
 
 
 def menus():
@@ -132,7 +106,7 @@ def menus():
         print(menu)
 
 
-def barangMasuk():
+def inventories():
     sys.stdout.write("\n")
     show()
     sys.stdout.write("\n")
@@ -147,4 +121,4 @@ def barangMasuk():
         case 3:
             exit()
         case _:
-            print("menu ticket tidak tersedia")
+            print("menu tidak tersedia")
