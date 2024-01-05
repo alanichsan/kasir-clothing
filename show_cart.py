@@ -13,8 +13,8 @@ def showCart(products):
             name = item["product"]["name"]
             price = item["product"]["price"]
             qty = item["qty"]
+            print("%-10d %-20s %d" % (qty, name, price))
         
-        print("%-10d %-20s %d" % (qty, name, price))
 
         # Print totals  
         total = sum(item["qty"] * item["product"]["price"] for item in products)  
