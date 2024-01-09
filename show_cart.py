@@ -1,3 +1,10 @@
+'''
+Anggota Kelompok :
+    Haidar Prayoga(202351048)
+    Irsyal Firmansyah(202351050)
+    Alan Lanang Ichsan(202351052)
+'''
+
 def showCart(products):
     if len(products) == 0:
         print("Anda belum memmiliki barang masuk untuk saat ini")
